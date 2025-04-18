@@ -64,7 +64,7 @@ function listBooks() {
 }
 
 function markAsRead(title) {
-    let book = library.find(b => b.title.toLowerCase() === title.toLowerCase());
+    let book = library.find(book => book.title.toLowerCase() === title.toLowerCase());
     if (book) {
         book.isRead = true;
         alert(`"${book.title}" has been marked as read.`);
