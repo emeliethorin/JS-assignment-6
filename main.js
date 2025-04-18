@@ -85,11 +85,15 @@ function removeBook() {
 
     if (!isNaN(zeroBasedIndex) && index >= 0 && zeroBasedIndex < library.length) {
         const removedBook = library.splice(zeroBasedIndex, 1)[0];
-        alert(`${removedBook.title} has been removed from your library.`);
+        alert(`"${removedBook.title}" has been removed from your library.`);
     } else {
         alert("Invalid number. No book was removed.");
         return library;
     }
+    console.log("Your current library contains:");
+    library.forEach((book, index) => {
+        console.log(`${index + 1}. "${book.title}" by ${book.author}. ${book.isRead ? "Read" : "Unread"}`);
+    });
 }
 
 mainMenu();
