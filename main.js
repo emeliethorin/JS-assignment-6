@@ -72,3 +72,22 @@ function markAsRead(title) {
         alert("Book not found.");
     }
 }
+
+function removeBook() {
+    console.log("Your current library contains:");
+    library.forEach((book, index) => {
+        console.log(`${index + 1}. "${book.title}" by ${book.author}. ${book.isRead ? "Read" : "Unread"}`);
+    });
+
+    const input = prompt("Enter the number of the book you want to remove");
+    const index = parseInt(input);
+    const zeroBasedIndex = index - 1;
+
+    if (!isNaN(zeroBasedIndex) && index >= 0 && zeroBasedIndex < library.length) {
+        const removedBook = library.splice(zeroBasedIndex, 1)[0];
+        alert(`${removedBook.title} has been removed from your library.`);
+    } else {
+        alert("Invalid number. No book was removed.");
+        return library;
+    }
+}
