@@ -55,3 +55,20 @@ function addBook() {
     alert (`${title} by ${author} added to your library`);
     listBooks();
 }
+
+function listBooks() {
+    console.log("Your library:");
+    library.forEach((book, index) => {
+        console.log(`${index + 1}. "${book.title}" by ${book.author}: ${book.isRead ? "Read" : "Unread"}`);
+    });
+}
+
+function markAsRead(title) {
+    let book = library.find(b => b.title.toLowerCase() === title.toLowerCase());
+    if (book) {
+        book.isRead = true;
+        alert(`"${book.title}" has been marked as read.`);
+    } else {
+        alert("Book not found.");
+    }
+}
