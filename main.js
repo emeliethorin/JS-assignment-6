@@ -91,3 +91,5 @@ function removeBook() {
         return library;
     }
 }
+
+mainMenu();
