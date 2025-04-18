@@ -38,3 +38,20 @@ let library = [
         isRead: false
     }
 ];
+
+function addBook() {
+    let title = prompt("What is the title of the book?");
+    let author = prompt("Who is the author?");
+    let isReadInput = prompt("Have you read this book? Answer by yes or no");
+    let isRead = isReadInput.toLowerCase() === "yes";
+
+    let newBook = {
+        title: title,
+        author: author,
+        isRead: isRead,
+    }
+
+    library.push(newBook);
+    alert (`${title} by ${author} added to your library`);
+    listBooks();
+}
