@@ -25,3 +25,16 @@ function mainMenu() {
         }
     } while (choice !== "5");
 }
+
+let library = [
+    {
+        title: "Harry Potter",
+        author: "J.K. Rowling",
+        isRead: true
+    },
+    {
+        title: "Pippi Långstrump",
+        author: "Astrid Lindgren",
+        isRead: false
+    }
+];
